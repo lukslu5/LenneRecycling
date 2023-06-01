@@ -1,0 +1,47 @@
+.width-narrow{
+    width: calc(100vw - 108px);
+    border-radius: 10px;
+}
+
+.width-wide{
+    width: calc(100vw - 22px);
+    border-radius: 25px;
+}
+
+.info-text{
+    background-color: var(--FontColor);
+}
+
+.info-text p{
+    padding: 10px 15px;
+}
+
+.info-text ul{
+    list-style: inside;
+    padding: 0px 15px 10px 15px;
+}
+
+.info-text h1{
+    font-family: 'Nova Square', cursive;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 122%;
+
+    letter-spacing: 0.02em;
+    padding: 10px 15px 0px 15px;
+}
+
+.info-header{
+    background-color: var(--FontColor);
+}
+
+.info-header p{
+    font-family: 'Nova Square', cursive;
+    font-weight: 400;
+    font-size: 28px;
+    
+    padding: 10px 10px;
+    text-align: center;
+    
+    color: var(--Blackish);
+}

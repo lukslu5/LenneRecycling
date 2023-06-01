@@ -1,0 +1,31 @@
+
+#logo{
+    width: calc(100vw - 165px);
+    height: calc(100vw - 165px);
+}
+#logo-font{
+    font-family: 'Nova Square';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: var(--FontColor);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+#logo-align{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    border: #E2007A solid 1px;
+}

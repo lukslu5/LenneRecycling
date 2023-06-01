@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0px;
+    padding: 0px;
+
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 122%;
+
+    letter-spacing: 0.02em;
+}
+
+html{
+    background-color: var(--SecondaryColor);
+}
+
+:root{
+    --PrimaryColorGradient1:#71FF2F;
+    --PrimaryColorGradient2:#5CBE2D;
+    --PrimaryColor: #69D635;
+    --SecondaryColor: #52405C;
+    --FontColor: #F0F0F0;
+    --GarbageGreen: #219348;
+    --GarbageGray: #6B6B6B;
+    --GarbageYellow: #FFC107;
+    --GarbageBrown: #7E5842;
+    --GarbagePink: #E2007A;
+    --Blackish: #1D1D1B;
+}

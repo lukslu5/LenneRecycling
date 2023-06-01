@@ -1,0 +1,41 @@
+#scanner-align{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+#video{
+    width: calc(100vw - 120px);
+    height: calc((100vw - 120px) * 0.75);
+    border: var(--Blackish) solid 2px;
+    border-radius: 10px;
+
+    background-color: var(--FontColor);
+}
+#outputdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: calc(100vw - 120px);
+    height: 48px;
+    background-color: var(--PrimaryColor);
+    border-radius: 15px;
+    border: 0.25px solid var(--Blackish);
+}
+#output{
+    display: flex;
+    justify-content: center;
+
+    padding: 5px;
+    background-color: var(--FontColor);
+    color: var(--Blackish);
+    border-radius: 15px;
+    border: 0.5px solid var(--Blackish);
+    width: calc(100vw - 120px - 20px);
+}
