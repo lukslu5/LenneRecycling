@@ -12,10 +12,6 @@
     letter-spacing: 0.02em;
 }
 
-html{
-    background-color: var(--SecondaryColor);
-}
-
 :root{
     --PrimaryColorGradient1:#71FF2F;
     --PrimaryColorGradient2:#5CBE2D;
@@ -29,3 +25,8 @@ html{
     --GarbagePink: #E2007A;
     --Blackish: #1D1D1B;
 }
+
+html{
+    background-color: var(--SecondaryColor);
+}
+

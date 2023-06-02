@@ -1,5 +1,9 @@
-@import 'src/assets/SCSS/shared-garbage.component.scss';
+@import 'src/assets/scss/shared-garbage.component.scss';
 
-.PC{color: var(--GarbageGray);}
-.SC{color: var(--FontColor);}
-.TC{color: var(--Blackish);}
+.stroke-PC{stroke: var(--GarbageGray);}
+.stroke-SC{stroke: var(--FontColor);}
+.stroke-TC{stroke: var(--Blackish);}
+
+.fill-PC{fill: var(--GarbageGray);}
+.fill-SC{fill: var(--FontColor);}
+.fill-TC{fill: var(--Blackish);}
