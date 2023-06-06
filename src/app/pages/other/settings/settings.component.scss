@@ -1,0 +1,96 @@
+.settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    translate: -50% 0;
+    width: calc(100vw - 30px);
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+}
+
+.option{
+    position: relative;
+    width: calc(100vw - 30px);
+    height: 46px;
+
+    background: var(--FontColor);
+    border-radius: 25px;
+}
+
+.icon-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+
+    position: absolute;
+    width: calc(100vw - 140px);
+    height: 30px;
+    left: 10px;
+    top: 8px;
+
+    font-family: 'Nova Square';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 122%;
+
+    letter-spacing: 0.02em;
+
+    color: var(--Blackish);
+
+}
+
+.icon-bg{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+    left: 0px;
+    top: 0px;
+}
+
+.icon-bg img{
+    max-height: 20px;
+    max-width: 20px;
+
+    position: absolute;
+}
+
+h1{
+    font-family: 'Nova Square';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+
+    color: #fff;
+}
+
+h2{
+    font-family: 'Nova Square';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 122%;
+    letter-spacing: 0.02em;
+
+    color:  var(--FontColor);
+}

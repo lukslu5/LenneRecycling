@@ -14,6 +14,10 @@ import { GarbageGreenComponent } from './pages/garbage/garbage-green/garbage-gre
 import { GarbageYellowComponent } from './pages/garbage/garbage-yellow/garbage-yellow.component';
 import { GarbageGrayComponent } from './pages/garbage/garbage-gray/garbage-gray.component';
 import { CurrentPageComponent } from './modules/current-page/current-page.component';
+import { SettingsComponent } from './pages/other/settings/settings.component';
+import { InfoComponent } from './pages/other/info/info.component';
+import { Game1Component } from './pages/game/game1/game1.component';
+import { Scanner2Component } from './pages/scanner/scanner2/scanner2.component';
 
 
 const appRoutes: Routes =[
@@ -23,7 +27,11 @@ const appRoutes: Routes =[
   { path: "menu/green", component: GarbageGreenComponent},
   { path: "menu/gray", component: GarbageGrayComponent},
   { path: "menu/yellow", component: GarbageYellowComponent},
-  { path: "scanner", component: Scanner1Component},
+  { path: "scanner/scan", component: Scanner1Component},
+  { path: "scanner/info", component: Scanner2Component},
+  { path: "settings", component: SettingsComponent},
+  { path: "info", component: InfoComponent},
+  { path: "game", component: Game1Component},
 ]
 
 @NgModule({
@@ -39,6 +47,10 @@ const appRoutes: Routes =[
     GarbageYellowComponent,
     GarbageGrayComponent,
     CurrentPageComponent,
+    SettingsComponent,
+    InfoComponent,
+    Game1Component,
+    Scanner2Component,
   ],
   imports: [
     BrowserModule,

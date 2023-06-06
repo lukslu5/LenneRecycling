@@ -1,4 +1,4 @@
-html{
+#double-vh{
     height: 200vh;
 }
 
@@ -20,7 +20,7 @@ html{
     border: #E2007A solid 1px;
 }
 
-#garbage-back{
+.garbage-back{
     display: inline-block;
     position: relative;
     top: 70%;
@@ -28,12 +28,12 @@ html{
     translate: -50% -50%;
     border: var(--GarbagePink) solid 2px;
 }
-#garbage-back svg{
+.garbage-back svg{
     width: 84.21vw;
     max-width: 40vh;
 }
 
-#garbage-front{
+.garbage-front{
     display: inline-block;
     position: absolute;
     top: calc(70% + 5.1vh);
@@ -41,7 +41,7 @@ html{
     left: calc(50% - 1.9vw);
     translate: -50% -50%;
 }
-#garbage-front svg{
+.garbage-front svg{
     width: 58.24vw;
     max-width: 27.6654vh;
 }
@@ -53,6 +53,24 @@ html{
     width: 90%;
     height: 75%;
     border: var(--PrimaryColor) solid 2px;
+}
 
-    transition: all .2s linear;
+#garbage-stack img{
+    max-width: 75px;
+    max-height: 75px;
+}
+
+#garbage-stack #img-scroll1{
+    position: absolute;
+    translate: -50% -50%;
+    left: 50%;
+    top: 0;
+
+}
+
+#garbage-stack #img-scroll2{
+    position: absolute;
+    translate: -50% -50%;
+    left: 0;
+    top: 0;
 }

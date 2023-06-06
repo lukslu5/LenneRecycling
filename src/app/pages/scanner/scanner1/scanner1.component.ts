@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BrowserMultiFormatReader } from '@zxing/library';
+//import { BrowserMultiFormatReader } from '@zxing/library';
 
 @Component({
   selector: 'app-scanner1',
@@ -10,7 +10,7 @@ import { BrowserMultiFormatReader } from '@zxing/library';
 //Quagga is outdated and this kinda works? Continue this with existing code on Monday!
 
 export class Scanner1Component {
-  ngOnInit() {
+  /*ngOnInit() {
     const videoElement = document.getElementById('video') as HTMLVideoElement;
     const outputElement = document.getElementById('output') as HTMLDivElement;
 
@@ -44,5 +44,5 @@ export class Scanner1Component {
     } else {
       console.error('getUserMedia is not supported');
     }
-  }
+  }*/
 }

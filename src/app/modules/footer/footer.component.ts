@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { Router} from '@angular/router';
 export class FooterComponent {
   constructor(private router: Router) { }
 
-  isInMenuRoute(): boolean {
-    return this.router.url.startsWith('/menu');
+  isInRoute(route: string): boolean {
+    return this.router.url.startsWith(`/${route}`);
   }
 }
