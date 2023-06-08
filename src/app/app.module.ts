@@ -20,6 +20,7 @@ import { Game1Component } from './pages/game/game1/game1.component';
 import { Scanner2Component } from './pages/scanner/scanner2/scanner2.component';
 
 
+
 const appRoutes: Routes =[
   { path: "", component: Splash1Component},
   { path: "declaimer", component: Splash2Component},
