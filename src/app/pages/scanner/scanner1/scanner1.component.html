@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div id="scanner-align">
-    <video id="video" autoplay></video>
+    <zxing-scanner [formats]="['EAN_13', 'EAN_8']" (scanSuccess)="scanSuccessHandler($event)"></zxing-scanner>
     <div id="outputdiv">
-        <div id="output">5050</div>
+        <div id="output">{{ savedResult }}</div>
     </div>
 </div>
 <app-footer></app-footer>

@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+
 import { AppComponent } from './app.component';
 import { FooterComponent } from './modules/footer/footer.component';
 import { HeaderComponent } from './modules/header/header.component';
@@ -18,8 +20,7 @@ import { SettingsComponent } from './pages/other/settings/settings.component';
 import { InfoComponent } from './pages/other/info/info.component';
 import { Game1Component } from './pages/game/game1/game1.component';
 import { Scanner2Component } from './pages/scanner/scanner2/scanner2.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes =[
   { path: "", component: Splash1Component},
@@ -55,6 +56,8 @@ const appRoutes: Routes =[
   ],
   imports: [
     BrowserModule,
+    ZXingScannerModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],

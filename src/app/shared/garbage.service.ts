@@ -29,8 +29,22 @@ export class GarbageService {
 
   moveGarbage(garbage: HTMLElement, scrollPercentage: number, garbageCan: boolean) {
     if (garbageCan === false) {
-       const rotationAngle = 0;
-       const translateX = 0;
+      const rotationAngle = 0;
+      const translateX = 0;
+
+      const xmidScreen = document.documentElement.clientWidth / 2;
+      const GarbagexPos = garbage.offsetLeft + garbage.offsetWidth / 4;
+
+      console.log(xmidScreen);
+      console.log(GarbagexPos);
+
+      if(GarbagexPos > xmidScreen && scrollPercentage > 0)
+      {
+        garbage.style.transform = `translate(${1 / scrollPercentage * 65}vw, ${(scrollPercentage * 65) / 100}vh) rotate(${rotationAngle}deg)`;
+      }
+      else if(scrollPercentage > 0){
+
+      }
 
       garbage.style.transform = `translate(${translateX}px, ${(scrollPercentage * 65) / 100}vh) rotate(${rotationAngle}deg)`;
     } else {

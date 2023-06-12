@@ -10,10 +10,10 @@
 
     position: absolute;
     width: calc(100vw - 22px);
-    height: 380px;
-    top: calc(200vh - 380px/2 - 14px);
+    height: 45vh;
+    top: calc(200vh - 48vh);
     left: 50%;
-    translate: -50% -50%;
+    translate: -50% 0;
     overflow-y: scroll;
     border-radius: 10px;
 

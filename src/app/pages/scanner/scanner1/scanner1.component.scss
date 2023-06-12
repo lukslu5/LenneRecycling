@@ -9,7 +9,7 @@
     left: 50%;
     translate: -50% -50%;
 }
-#video{
+:host zxing-scanner::ng-deep{
     width: calc(100vw - 120px);
     height: calc((100vw - 120px) * 0.75);
     border: var(--Blackish) solid 2px;

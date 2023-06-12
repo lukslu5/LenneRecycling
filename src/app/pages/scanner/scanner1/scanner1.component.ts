@@ -1,48 +1,42 @@
 import { Component } from '@angular/core';
-//import { BrowserMultiFormatReader } from '@zxing/library';
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-scanner1',
   templateUrl: './scanner1.component.html',
-  styleUrls: ['./scanner1.component.scss']
+  styleUrls: ['./scanner1.component.scss'],
+  
 })
 
-//Quagga is outdated and this kinda works? Continue this with existing code on Monday!
-
 export class Scanner1Component {
-  /*ngOnInit() {
-    const videoElement = document.getElementById('video') as HTMLVideoElement;
-    const outputElement = document.getElementById('output') as HTMLDivElement;
+  constructor(private http: HttpClient) { }
 
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      // Request access to the webcam
-      navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-          // Display the webcam video stream in the video element
-          videoElement.srcObject = stream;
 
-          // Initialize the barcode reader
-          const codeReader = new BrowserMultiFormatReader();
+  savedResult: string = "0000000000000";
 
-          // Start scanning for barcodes
-          codeReader.decodeFromVideoElement(videoElement)
-            .then(results => {
-              // Barcode recognized, update the output element with the result
-              const result = results[0];
-              if (result) {
-                outputElement.innerText = result.getText();
-              }
-            })
-            .catch(error => {
-              // Handle errors
-              console.error(error);
-            });
-        })
-        .catch(error => {
-          console.error('Error accessing the webcam:', error);
-        });
-    } else {
-      console.error('getUserMedia is not supported');
+  scanSuccessHandler(result: string){
+    if(this.savedResult != result)
+    {
+      this.savedResult = result;
+    
+      this.makeApiRequest(this.savedResult)
+      console.log(this.savedResult);
     }
-  }*/
+  }
+
+  makeApiRequest(barcode: string): void {
+    const url = `http://opengtindb.org/?ean=${barcode}&cmd=query&queryid=400000000`;
+  
+    this.http.get(url).pipe(
+      catchError((error) => {
+        console.error(error);
+        return throwError(() => error);
+      })
+    ).subscribe((response: any) => {
+      console.log(response);
+    });
+  }
+  
 }
