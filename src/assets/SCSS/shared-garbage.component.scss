@@ -37,7 +37,6 @@
     display: inline-block;
     position: absolute;
     top: calc(70% + 5.1vh);
-    
     left: calc(50% - 1.9vw);
     translate: -50% -50%;
 }
@@ -63,14 +62,14 @@
 #garbage-stack #img-scroll1{
     position: absolute;
     translate: -50% -50%;
-    left: 50%;
-    top: 0;
+    left: 49%;
+    top: 10vh;
 
 }
 
 #garbage-stack #img-scroll2{
     position: absolute;
     translate: -50% -50%;
-    left: 0;
-    top: 0;
+    left: 51%;
+    top: 10vh;
 }

@@ -8,7 +8,8 @@ import { GarbageService } from '../../../shared/garbage.service';
   providers: [GarbageService]
 })
 export class GarbageBrownComponent {
-  constructor(private elementRef: ElementRef, private garbageService: GarbageService) {}
+  constructor(private elementRef: ElementRef, private garbageService: GarbageService) {
+  }
 
   @HostListener('window:scroll')
   handleScroll() {
