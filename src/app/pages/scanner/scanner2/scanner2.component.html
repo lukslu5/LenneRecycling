@@ -1,39 +1,37 @@
 <app-header></app-header>
 <app-current-page></app-current-page>
-<div class="align-text">
-    <div id="video"></div>
-    <div class="info-header width-wide">
+<div class="x-scroll">
+    <div class="product" *ngFor="let product of products">
+      <div id="video-screenshot"></div>
+      <div class="info-header width-wide">
         <p>
-            Apfelwein
+          {{ product.name }},{{ product.detailname}}
         </p>
-    </div>
-    <div class="info-text width-wide">
-        <h1>
-            Hersteller:
-        </h1>
+      </div>
+      <div class="info-text width-wide">
+        <h1>Hersteller:</h1>
         <p>
-            V
+          {{ product.vendor }}
         </p>
         <h1>Herkunfsland:</h1>
         <p>
-            V
+          {{ product.origin }}
         </p>
-    </div>
-    <div class="info-text width-wide">
+      </div>
+      <div class="info-text width-wide">
+        <h1>Verpackung:</h1>
+        <p>
+          {{ product.pack}}
+        </p>
+      </div>
+      <div class="info-text width-wide">
         <h1>
-            Verpackung:
+          Achtung
         </h1>
         <p>
-            V
+          V
         </p>
-    </div>
-    <div class="info-text width-wide">
-        <h1>
-            Achtung
-        </h1>
-        <p>
-            V
-        </p>
+      </div>
     </div>
 </div>
 <app-footer></app-footer>

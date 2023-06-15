@@ -7,27 +7,33 @@ app-current-page{
     left: 50%;
 }
 
-.align-text{
+
+.x-scroll {
+    position: relative;
+    top: 70px;
+    max-height: calc(100vh - 120px);
+
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+}
+
+.product {
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-
-    position: absolute;
-    width: calc(100vw - 22px);
-    height: calc(100vh - 120px);
-    top: 70px;
-    left: 50%;
-    translate: -50% 0;
-    overflow-y: scroll;
+    border: #E2007A solid 1px;
     border-radius: 10px;
 
-    border: #E2007A solid 1px;
+    overflow-y: scroll;
 }
 
-#video{
-    width: calc(100vw - 120px);
-    height: calc((100vw - 120px) * 0.75);
+
+#video-screenshot{
+    min-width: calc(100vw - 120px);
+    min-height: calc((100vw - 120px) * 0.75);
     border: var(--Blackish) solid 2px;
     border-radius: 10px;
 
