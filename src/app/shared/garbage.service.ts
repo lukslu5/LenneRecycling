@@ -30,6 +30,7 @@ export class GarbageService {
 
   moveGarbage(garbage: HTMLElement, scrollPercentage: number, garbageCan: boolean) {
     console.log(garbage.id);
+    garbage.style.display = 'block';
 
     if (garbageCan === false) {
 
