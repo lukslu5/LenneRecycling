@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-current-page></app-current-page>
 <div class="x-scroll">
-    <div class="product" *ngFor="let product of products">
+    <div class="product" *ngFor="let product of products;index as indexOfProduct">
       <div id="video-screenshot"></div>
       <div class="info-header width-wide">
         <p>
@@ -18,11 +18,11 @@
           {{ product.origin }}
         </p>
       </div>
-      <div class="info-text width-wide">
+      <div class="info-text width-wide" *ngIf="productPacks[indexOfProduct]?.length">
         <h1>Verpackung:</h1>
-        <p>
-          {{ product.pack}}
-        </p>
+        <ul>
+          <li  *ngFor="let pack of productPacks[indexOfProduct]">{{ pack }}</li>
+        </ul>
       </div>
       <div class="info-text width-wide">
         <h1>

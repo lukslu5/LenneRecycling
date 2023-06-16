@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../scanner1/scanner1.component';
+import { Product, ProductService } from 'src/app/shared/scanner.service';
 
 @Component({
   selector: 'app-scanner2',
@@ -9,16 +8,20 @@ import { Product } from '../scanner1/scanner1.component';
 })
 export class Scanner2Component implements OnInit {
   products: Product[];
+  productPacks: any[] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private sharedService: ProductService
+  ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      if (params.products) {
-        this.products = JSON.parse(params.products);
-      } else {
-        // Handle case when products are not available
-      }
-    });
+    this.products = this.sharedService.products;
+
+    for(let i = 0;i < this.products.length;i++)
+    {
+      this.productPacks[i] = this.sharedService.getPackaging(Number(this.products[i].pack));
+    }
+    console.log(this.products);
+    console.log(this.productPacks);
   }
 }

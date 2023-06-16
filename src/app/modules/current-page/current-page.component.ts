@@ -12,17 +12,17 @@ export class CurrentPageComponent {
   pathSmall: string = "../../assets/Icons/Circle_S.svg"
   pathBig: string = "../../assets/Icons/Circle_B.svg"
   
+  private urlMap = {
+    brown: 0,
+    green: 1,
+    gray: 2,
+    yellow: 3
+  };
+
   getPaths() {
     let paths: string[] = []
-
-    const urlMap = {
-      brown: 0,
-      green: 1,
-      gray: 2,
-      yellow: 3
-    };
   
-    const changeIndex = urlMap[this.router.url.split('/').pop()];
+    const changeIndex = this.urlMap[this.router.url.split('/').pop()];
     paths = Array(4).fill(this.pathSmall);
   
     if (changeIndex !== undefined) {
@@ -31,5 +31,4 @@ export class CurrentPageComponent {
 
     return paths;
   }
-  
 }
