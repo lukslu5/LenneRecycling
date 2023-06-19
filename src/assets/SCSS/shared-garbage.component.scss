@@ -16,33 +16,24 @@
     translate: -50% 0;
     overflow-y: scroll;
     border-radius: 10px;
-
-    border: #E2007A solid 1px;
 }
 
 .garbage-back{
     display: inline-block;
-    position: relative;
+    position: absolute;
+    width: 85vw;
     top: 70%;
     left: 50%;
     translate: -50% -50%;
-    border: var(--GarbagePink) solid 2px;
-}
-.garbage-back svg{
-    width: 84.21vw;
-    max-width: 40vh;
 }
 
 .garbage-front{
     display: inline-block;
     position: absolute;
-    top: calc(70% + 5.1vh);
-    left: calc(50% - 1.9vw);
+    width: 85vw;
+    top: 70%;
+    left: 50%;
     translate: -50% -50%;
-}
-.garbage-front svg{
-    width: 58.24vw;
-    max-width: 27.6654vh;
 }
 #garbage-stack{
     position: absolute;
@@ -51,7 +42,6 @@
     translate: -50% 0;
     width: 90%;
     height: 75%;
-    border: var(--PrimaryColor) solid 2px;
 }
 
 #garbage-stack img{
@@ -60,18 +50,16 @@
 }
 
 #garbage-stack #img-scroll1{
-    display: none;
     position: absolute;
     translate: -50% -50%;
-    left: 49%;
+    left: 50%;
     top: 10vh;
 
 }
 
 #garbage-stack #img-scroll2{
-    display: none;
     position: absolute;
     translate: -50% -50%;
-    left: 51%;
+    left: 50%;
     top: 10vh;
 }

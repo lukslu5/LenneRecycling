@@ -21,6 +21,8 @@ import { InfoComponent } from './pages/other/info/info.component';
 import { Game1Component } from './pages/game/game1/game1.component';
 import { Scanner2Component } from './pages/scanner/scanner2/scanner2.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GarbageFrontComponent } from './modules/garbage-can/garbage-front/garbage-front.component';
+import { GarbageBackComponent } from './modules/garbage-can/garbage-back/garbage-back.component';
 
 const appRoutes: Routes =[
   { path: "", component: Splash1Component},
@@ -53,6 +55,8 @@ const appRoutes: Routes =[
     InfoComponent,
     Game1Component,
     Scanner2Component,
+    GarbageFrontComponent,
+    GarbageBackComponent,
   ],
   imports: [
     BrowserModule,

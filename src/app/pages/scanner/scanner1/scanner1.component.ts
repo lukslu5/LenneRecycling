@@ -21,7 +21,10 @@ export class Scanner1Component implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.makeApiRequest('9006900014858');
+  }
+
+  testing(): void{
+    this.makeApiRequest('4011094102033');
   }
 
   scanSuccessHandler(result: string) {

@@ -1,51 +1,61 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GarbageService {
+export class GarbageService implements OnInit{
   constructor() { 
   }
-  handleScroll() {
+  ngOnInit(): void {
+    this.handleScroll();
+  }
+
+  async handleScroll() {
     const scrollPosition = window.scrollY;
     const scrollPercentage = (scrollPosition / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    const scrollThreshold = 80;
 
     const footer = document.querySelector('#footer') as HTMLElement;
     const garbageStack = document.querySelector('#garbage-stack') as HTMLElement;
     const imgscroll1 = document.querySelector('#img-scroll1') as HTMLElement;
     const imgscroll2 = document.querySelector('#img-scroll2') as HTMLElement;
 
-
-    this.moveGarbage(garbageStack, scrollPercentage, true);
-    this.moveGarbage(imgscroll1, scrollPercentage * 0.8, false);
-    this.moveGarbage(imgscroll2, scrollPercentage * 0.9, false);
-
-    if (scrollPercentage >= scrollThreshold) {
+    if(scrollPercentage >= 80){
       footer.style.display = 'none';
-    } else {
+    }
+    else{
       footer.style.display = 'block';
+    }
+
+    this.moveGarbage(garbageStack, scrollPercentage);
+    this.moveGarbage(imgscroll1, scrollPercentage * 0.98);
+    this.moveGarbage(imgscroll2, scrollPercentage * 0.92);
+
+  }
+
+  moveGarbage(garbage: HTMLElement, scrollPercentage: number) {
+    if(scrollPercentage === 0){
+    }
+    else{
+      const factor = 30
+      const xMove = (-factor*Math.pow(scrollPercentage,4) / (Math.pow(scrollPercentage,4) + Math.pow(factor,4))) + factor;
+      const yMove = garbage.id === 'garbage-stack' ? (scrollPercentage * 65) / 100 : (scrollPercentage * 55) / 100;
+      console.log(`${garbage.id} : yMove=${yMove}`)
+      
+      const rotate = Math.pow(2,0.12 * scrollPercentage);
+
+      if(garbage.id === 'img-scroll1'){
+        this.transformGarbage(garbage, yMove, xMove, -rotate);
+      }
+      else if(garbage.id === 'img-scroll2'){
+        this.transformGarbage(garbage, yMove, -xMove, rotate);
+      }
+      else {
+        this.transformGarbage(garbage, yMove);
+      }
     }
   }
 
-  moveGarbage(garbage: HTMLElement, scrollPercentage: number, garbageCan: boolean) {
-    console.log(garbage.id);
-    garbage.style.display = 'block';
-
-    if (garbageCan === false) {
-
-      const xmidScreen = document.documentElement.clientWidth / 2;
-      const GarbagexPos = garbage.offsetLeft + garbage.offsetWidth / 4;
-
-      if(GarbagexPos > xmidScreen){
-        garbage.style.transform = `translate(${(1 / scrollPercentage) * 100}vw, ${(scrollPercentage * 55) / 100}vh) rotate(-${Math.pow(2,0.12 * scrollPercentage)}deg)`;
-      }
-      else if(GarbagexPos < xmidScreen){
-        garbage.style.transform = `translate(-${(1 / scrollPercentage) * 100}vw, ${(scrollPercentage * 55) / 100}vh) rotate(${Math.pow(2,0.12 * scrollPercentage)}deg)`;
-      }
-
-    } else {
-      garbage.style.transform = `translateY(${(scrollPercentage * 65) / 100}vh)`;
-    }
+  transformGarbage(garbage:HTMLElement, yMove: number, xMove: number = 0, rotate:number = 0){
+    garbage.style.transform = `translate(${xMove}vw, ${yMove}vh) rotate(${rotate}deg)`;
   }
 }

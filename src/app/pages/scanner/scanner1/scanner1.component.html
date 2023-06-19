@@ -1,6 +1,7 @@
 <app-header></app-header>
 <div id="scanner-align">
     <zxing-scanner [formats]="['EAN_13', 'EAN_8']" (scanSuccess)="scanSuccessHandler($event)"></zxing-scanner>
+    <div class="testing" (click)="testing()">TestScan</div>
     <div id="outputdiv">
         <div id="output">{{ savedResult }}</div>
     </div>

@@ -1,3 +1,14 @@
+.testing{
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+
+    width: calc(100vw - 120px);
+    height: 48px;
+    padding: 10px 0 0 0;
+    border-radius: 15px
+}
+
 #scanner-align{
     display: flex;
     flex-direction: column;
