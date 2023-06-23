@@ -18,23 +18,6 @@
     border-radius: 10px;
 }
 
-.garbage-back{
-    display: inline-block;
-    position: absolute;
-    width: 85vw;
-    top: 70%;
-    left: 50%;
-    translate: -50% -50%;
-}
-
-.garbage-front{
-    display: inline-block;
-    position: absolute;
-    width: 85vw;
-    top: 70%;
-    left: 50%;
-    translate: -50% -50%;
-}
 #garbage-stack{
     position: absolute;
     top: 80px;
@@ -42,6 +25,15 @@
     translate: -50% 0;
     width: 90%;
     height: 75%;
+}
+
+#garbage-stack div{
+    display: inline-block;
+    position: absolute;
+    width: 85vw;
+    top: 70%;
+    left: 50%;
+    translate: -50% -50%;
 }
 
 #garbage-stack img{

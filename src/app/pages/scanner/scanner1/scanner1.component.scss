@@ -1,14 +1,3 @@
-.testing{
-    background-color: #FFF;
-    display: flex;
-    justify-content: center;
-
-    width: calc(100vw - 120px);
-    height: 48px;
-    padding: 10px 0 0 0;
-    border-radius: 15px
-}
-
 #scanner-align{
     display: flex;
     flex-direction: column;
@@ -37,7 +26,7 @@ zxing-scanner{
     height: 48px;
     background-color: var(--PrimaryColor);
     border-radius: 15px;
-    border: 0.25px solid var(--Blackish);
+    border: 2px solid var(--Blackish);
 }
 #output{
     display: flex;
@@ -47,6 +36,5 @@ zxing-scanner{
     background-color: var(--FontColor);
     color: var(--Blackish);
     border-radius: 15px;
-    border: 0.5px solid var(--Blackish);
     width: calc(100vw - 120px - 20px);
 }

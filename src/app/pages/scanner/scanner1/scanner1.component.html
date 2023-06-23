@@ -1,9 +1,8 @@
 <app-header></app-header>
 <div id="scanner-align">
-    <zxing-scanner [formats]="['EAN_13', 'EAN_8']" (scanSuccess)="scanSuccessHandler($event)"></zxing-scanner>
-    <div class="testing" (click)="testing()">TestScan</div>
+    <zxing-scanner [formats]="['EAN_13', 'EAN_8']" (scanSuccess)="scanSuccessHandler($event)" (click)="testing()"></zxing-scanner>
     <div id="outputdiv">
-        <div id="output">{{ savedResult }}</div>
+        <input id="output" type="text" maxlength="13" [(ngModel)]="savedResult" (blur)="makeApiRequest()">
     </div>
 </div>
 <app-footer></app-footer>

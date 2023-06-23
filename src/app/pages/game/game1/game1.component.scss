@@ -1,0 +1,10 @@
+@import 'src/assets/scss/shared-general.component.scss';
+
+.press-play{
+    text-align: center;
+    width: calc(100% / 3);
+    border-radius: 15px;
+    border-right: 2px solid var(--Blackish);
+    border-left: 2px solid var(--Blackish);
+    background: linear-gradient(180deg, var(--PrimaryColorGradient1) 0%, var(--PrimaryColorGradient2) 100%);
+}

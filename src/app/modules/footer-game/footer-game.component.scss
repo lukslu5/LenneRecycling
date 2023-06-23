@@ -1,0 +1,45 @@
+footer{
+    position: fixed;
+    z-index: 1;
+    bottom: 0px;
+
+    background-color: var(--PrimaryColor);
+    height: 36px;
+    width: calc(100vw - 2px);
+    border-style: solid;
+    border-width: 2px 1px 0px 1px;
+    border-radius: 45px 45px 0px 0px;
+    border-color: var(--Blackish);
+}
+.footer-align{
+    position: relative;
+    top: calc(50% - 25px/2);
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(100vw / 2);
+    
+}
+.footer-align svg{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.cutout{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    translate: -50% 0;
+    width: 25vw;
+}
+
+.line{
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    translate: -50% 0;
+    width: 23.3vw;
+}

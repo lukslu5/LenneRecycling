@@ -23,6 +23,9 @@ import { Scanner2Component } from './pages/scanner/scanner2/scanner2.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GarbageFrontComponent } from './modules/garbage-can/garbage-front/garbage-front.component';
 import { GarbageBackComponent } from './modules/garbage-can/garbage-back/garbage-back.component';
+import { HeaderGameComponent } from './modules/header-game/header-game.component';
+import { FooterGameComponent } from './modules/footer-game/footer-game.component';
+import { Game2Component } from './pages/game/game2/game2.component';
 
 const appRoutes: Routes =[
   { path: "", component: Splash1Component},
@@ -35,7 +38,8 @@ const appRoutes: Routes =[
   { path: "scanner/info", component: Scanner2Component},
   { path: "settings", component: SettingsComponent},
   { path: "info", component: InfoComponent},
-  { path: "game", component: Game1Component},
+  { path: "game/info", component: Game1Component},
+  { path: "game/play", component: Game2Component}
 ]
 
 @NgModule({
@@ -57,6 +61,9 @@ const appRoutes: Routes =[
     Scanner2Component,
     GarbageFrontComponent,
     GarbageBackComponent,
+    HeaderGameComponent,
+    FooterGameComponent,
+    Game2Component,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/scanner.service';
@@ -11,8 +12,8 @@ import { throwError } from 'rxjs';
   templateUrl: './scanner1.component.html',
   styleUrls: ['./scanner1.component.scss'],
 })
-export class Scanner1Component implements OnInit {
-  savedResult: string = "0000000000000";
+export class Scanner1Component {
+  savedResult: string;
 
   constructor(
     private http: HttpClient,
@@ -20,23 +21,24 @@ export class Scanner1Component implements OnInit {
     private sharedService: ProductService
   ) { }
 
-  ngOnInit(): void {
-  }
-
   testing(): void{
-    this.makeApiRequest('4011094102033');
+    this.savedResult = "4011094102033"
+    this.makeApiRequest();
   }
 
   scanSuccessHandler(result: string) {
     if (this.savedResult !== result) {
       this.savedResult = result;
-      this.makeApiRequest(this.savedResult);
-      console.log(this.savedResult);
+      this.makeApiRequest();
     }
   }
 
-  makeApiRequest(barcode: string): void {
-    const url = `http://localhost:3000/api?ean=${barcode}`;
+  makeApiRequest(): void {
+    if(this.isBarcodeValid(this.savedResult) === false){
+      return;
+    }
+
+    const url = `http://localhost:3000/api?ean=${this.savedResult}`;
 
     this.http.get(url, {responseType: 'text' }).subscribe(
       {
@@ -55,4 +57,24 @@ export class Scanner1Component implements OnInit {
       }
     )
   }
+
+  isBarcodeValid(barcode: string): boolean {
+    let sum = 0;
+    const check = Number(barcode[barcode.length - 1]);
+  
+    for (let i = barcode.length - 2; i >= 0; i -= 2) {
+      sum += (Number(barcode[i]) * 3);
+    }
+  
+    for (let i = barcode.length - 3; i >= 0; i -= 2) {
+      sum += Number(barcode[i]);
+    }
+  
+    if ((sum + check) % 10 === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
 }

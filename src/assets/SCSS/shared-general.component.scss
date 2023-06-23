@@ -45,3 +45,15 @@
     
     color: var(--Blackish);
 }
+
+.center-align{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
