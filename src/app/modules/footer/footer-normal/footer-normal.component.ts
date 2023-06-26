@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  templateUrl: './footer-normal.component.html',
+  styleUrls: ['./footer-normal.component.scss']
 })
 export class FooterComponent {
   constructor(private router: Router) { }

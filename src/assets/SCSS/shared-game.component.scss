@@ -1,0 +1,52 @@
+app-garbage-back,app-garbage-front,app-garbage-extra{
+    position: absolute;
+    display: inline-block;
+    width: 40vw;
+    translate: -50% -50%;
+}
+
+$left-right: 21vw;
+$top-down: 17vh;
+
+#yellow-stack{
+    position: absolute;
+    right: $left-right;
+    bottom: $top-down;
+}
+
+#brown-stack{
+    position: absolute;
+    left: $left-right;
+    top: $top-down;
+}
+
+#gray-stack{
+    position: absolute;
+    left: $left-right;
+    bottom: $top-down;
+}
+
+#green-stack{
+    position: absolute;
+    right: $left-right;
+    top: $top-down;
+}
+
+.zone{
+    position: absolute;
+    translate: -50% -50%;
+
+    width: 40vw;
+    height: 30vh;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 30%;
+
+    z-index: -1;
+}
+
+img{
+    position: absolute;
+    translate: -50% -50%;
+    top: 50%;
+    left: 50%;
+}

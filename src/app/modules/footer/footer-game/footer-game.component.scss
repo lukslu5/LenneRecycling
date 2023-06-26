@@ -34,12 +34,33 @@ footer{
     left: 50%;
     translate: -50% 0;
     width: 25vw;
-}
 
+    z-index: 2;
+}
+.cutout svg{
+    position: absolute;
+}
 .line{
     position: absolute;
     top: -2px;
+}
+
+
+.score{
+    position: absolute;
+    top: -30px;
     left: 50%;
     translate: -50% 0;
-    width: 23.3vw;
+
+    z-index: 3;
+}
+
+h1{
+    font-family: 'Nova Square', cursive;
+    font-weight: 400;
+    font-size: 50px;
+
+    letter-spacing: 0.02em;
+
+    color: var(--FontColor);
 }

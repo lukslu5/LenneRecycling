@@ -6,8 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './modules/footer/footer.component';
-import { HeaderComponent } from './modules/header/header.component';
+import { FooterComponent } from './modules/footer/footer-normal/footer-normal.component';
+import { HeaderComponent } from './modules/header/header-normal/header-normal.component';
 import { Splash1Component } from './pages/splash/splash1/splash1.component';
 import { Splash2Component } from './pages/splash/splash2/splash2.component';
 import { Scanner1Component } from './pages/scanner/scanner1/scanner1.component';
@@ -23,9 +23,10 @@ import { Scanner2Component } from './pages/scanner/scanner2/scanner2.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GarbageFrontComponent } from './modules/garbage-can/garbage-front/garbage-front.component';
 import { GarbageBackComponent } from './modules/garbage-can/garbage-back/garbage-back.component';
-import { HeaderGameComponent } from './modules/header-game/header-game.component';
-import { FooterGameComponent } from './modules/footer-game/footer-game.component';
+import { HeaderGameComponent } from './modules/header/header-game/header-game.component';
+import { FooterGameComponent } from './modules/footer/footer-game/footer-game.component';
 import { Game2Component } from './pages/game/game2/game2.component';
+import { GarbageExtraComponent } from './modules/garbage-can/garbage-extra/garbage-extra.component';
 
 const appRoutes: Routes =[
   { path: "", component: Splash1Component},
@@ -64,6 +65,7 @@ const appRoutes: Routes =[
     HeaderGameComponent,
     FooterGameComponent,
     Game2Component,
+    GarbageExtraComponent,
   ],
   imports: [
     BrowserModule,

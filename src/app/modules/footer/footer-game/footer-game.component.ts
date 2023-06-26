@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer-game.component.scss']
 })
 export class FooterGameComponent {
-
+  score: number = 0;
 }

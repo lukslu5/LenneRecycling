@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product, ProductService } from 'src/app/shared/scanner.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { Product, ProductService } from 'src/app/shared/scanner.service';
   styleUrls: ['./scanner2.component.scss'],
 })
 export class Scanner2Component implements OnInit {
+  @Input() capturedImage: string;
+  //WIP
   products: Product[];
   productPacks: any[] = [];
 

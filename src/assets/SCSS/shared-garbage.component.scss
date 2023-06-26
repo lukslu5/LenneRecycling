@@ -9,7 +9,7 @@
     gap: 15px;
 
     position: absolute;
-    min-width: 100vw;
+
     height: 45vh;
     top: calc(200vh - 48vh);
     left: 50%;
@@ -27,10 +27,10 @@
     height: 75%;
 }
 
-#garbage-stack div{
+app-garbage-back,app-garbage-front,app-garbage-extra{
     display: inline-block;
     position: absolute;
-    width: 85vw;
+    width: 85%;
     top: 70%;
     left: 50%;
     translate: -50% -50%;

@@ -1,4 +1,5 @@
 @import 'src/assets/scss/shared-general.component.scss';
+@import 'src/assets/scss/shared-game.component.scss';
 
 .press-play{
     text-align: center;
@@ -8,3 +9,4 @@
     border-left: 2px solid var(--Blackish);
     background: linear-gradient(180deg, var(--PrimaryColorGradient1) 0%, var(--PrimaryColorGradient2) 100%);
 }
+

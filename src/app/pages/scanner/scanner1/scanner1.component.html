@@ -1,6 +1,7 @@
 <app-header></app-header>
 <div id="scanner-align">
     <zxing-scanner [formats]="['EAN_13', 'EAN_8']" (scanSuccess)="scanSuccessHandler($event)" (click)="testing()"></zxing-scanner>
+    <video #videoElement id="video" autoplay></video>
     <div id="outputdiv">
         <input id="output" type="text" maxlength="13" [(ngModel)]="savedResult" (blur)="makeApiRequest()">
     </div>

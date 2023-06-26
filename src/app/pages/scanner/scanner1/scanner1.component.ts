@@ -1,11 +1,7 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/scanner.service';
-
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-scanner1',
@@ -13,7 +9,11 @@ import { throwError } from 'rxjs';
   styleUrls: ['./scanner1.component.scss'],
 })
 export class Scanner1Component {
+  @Output() imageCaptured: EventEmitter<string> = new EventEmitter<string>();
+  @ViewChild('videoElement', { static: false }) videoElement: ElementRef;
+  //WIP
   savedResult: string;
+
 
   constructor(
     private http: HttpClient,
@@ -22,13 +22,17 @@ export class Scanner1Component {
   ) { }
 
   testing(): void{
-    this.savedResult = "4011094102033"
+    this.savedResult = "4388844020870"
     this.makeApiRequest();
   }
 
   scanSuccessHandler(result: string) {
     if (this.savedResult !== result) {
       this.savedResult = result;
+
+      const image = this.captureImage();
+      this.imageCaptured.emit(image);
+
       this.makeApiRequest();
     }
   }
@@ -76,5 +80,21 @@ export class Scanner1Component {
       return false;
     }
   }
+  //WIP
+  captureImage(): string {
+    const video: HTMLVideoElement = this.videoElement.nativeElement;
   
+    // Create a canvas element
+    const canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+  
+    // Draw the current frame from the video onto the canvas
+    const context = canvas.getContext('2d');
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+  
+    // Get the image data from the canvas as a base64 encoded string
+    return canvas.toDataURL('image/png');
+  
+  }
 }
