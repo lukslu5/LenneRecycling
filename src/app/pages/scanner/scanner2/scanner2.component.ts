@@ -8,7 +8,7 @@ import { Product, ProductService } from 'src/app/shared/scanner.service';
 })
 export class Scanner2Component implements OnInit {
   @Input() capturedImage: string;
-  //WIP
+
   products: Product[];
   productPacks: any[] = [];
 

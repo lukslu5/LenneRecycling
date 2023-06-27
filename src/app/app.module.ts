@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { DragAndDropModule } from 'angular-draggable-droppable';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './modules/footer/footer-normal/footer-normal.component';
@@ -27,6 +28,7 @@ import { HeaderGameComponent } from './modules/header/header-game/header-game.co
 import { FooterGameComponent } from './modules/footer/footer-game/footer-game.component';
 import { Game2Component } from './pages/game/game2/game2.component';
 import { GarbageExtraComponent } from './modules/garbage-can/garbage-extra/garbage-extra.component';
+import { ImprintComponent } from './modules/other/imprint/imprint.component';
 
 const appRoutes: Routes =[
   { path: "", component: Splash1Component},
@@ -66,10 +68,12 @@ const appRoutes: Routes =[
     FooterGameComponent,
     Game2Component,
     GarbageExtraComponent,
+    ImprintComponent,
   ],
   imports: [
     BrowserModule,
     ZXingScannerModule,
+    DragAndDropModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)

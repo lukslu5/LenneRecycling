@@ -5,35 +5,65 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header-game.component.html',
   styleUrls: ['./header-game.component.scss']
 })
-export class HeaderGameComponent implements OnInit{
-  time:string
+export class HeaderGameComponent implements OnInit {
+  stringTime:string;
+  currentTime = new Date();
+  gameStatus: boolean = false; 
 
   ngOnInit(): void {
-    const currentTime = new Date();
-    currentTime.setMinutes(0);
-    currentTime.setSeconds(45);
-
-    this.updateTime(currentTime);
+    this.resetTime();
   }
 
-  updateTime(currentTime: Date): void {
-    this.time = currentTime.toLocaleTimeString(navigator.language, {
+  private resetTime(): void{
+    this.currentTime.setMinutes(0);
+    this.currentTime.setSeconds(45);
+    this.dateToString();
+  }
+
+  public startTime(): void{
+    this.gameStatus = true;
+    this.resetTime();
+    this.updateTime();
+  }
+
+  private updateTime(): void {
+    if(this.gameStatus === true){
+      this.dateToString();
+
+      this.currentTime.setSeconds(this.currentTime.getSeconds() - 1);
+  
+      if (this.currentTime.getSeconds() > 0 || this.currentTime.getMinutes() > 0) {
+        setTimeout(() => {
+          this.updateTime();
+        }, 1000);
+      }
+      else{
+        setTimeout(() => {
+          this.endGame();
+        }, 1000);
+      }
+    }
+  }
+  public endGame():void{
+    this.stringTime = "Time Over";
+    this.gameStatus = false;
+  }
+  public addTime():void{
+    this.currentTime.setSeconds(this.currentTime.getSeconds() + 5);
+  }
+  public subTime():void{
+    if(this.currentTime.getSeconds() > 5 || this.currentTime.getMinutes() > 0){
+      this.currentTime.setSeconds(this.currentTime.getSeconds() - 5);
+    }
+    else{
+      this.endGame();
+    }
+  }
+
+  private dateToString(): void{
+    this.stringTime = this.currentTime.toLocaleTimeString(navigator.language, {
       minute: '2-digit',
       second: '2-digit'
     });
-
-
-    currentTime.setSeconds(currentTime.getSeconds() - 1);
-
-    if (currentTime.getSeconds() > 0) {
-      setTimeout(() => {
-        this.updateTime(currentTime);
-      }, 1000);
-    }
-    else{
-      setTimeout(() => {
-        this.time = "Time Over";
-      }, 1000);
-    }
   }
 }

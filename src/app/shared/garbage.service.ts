@@ -1,16 +1,6 @@
-import { Injectable, OnInit } from '@angular/core';
+export class GarbageService {
 
-@Injectable({
-  providedIn: 'root'
-})
-export class GarbageService implements OnInit{
-  constructor() { 
-  }
-  ngOnInit(): void {
-    this.handleScroll();
-  }
-
-  async handleScroll() {
+  handleScroll() {
     const scrollPosition = window.scrollY;
     const scrollPercentage = (scrollPosition / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
@@ -33,25 +23,21 @@ export class GarbageService implements OnInit{
   }
 
   moveGarbage(garbage: HTMLElement, scrollPercentage: number) {
-    if(scrollPercentage === 0){
-    }
-    else{
-      const factor = 30
-      const xMove = (-factor*Math.pow(scrollPercentage,4) / (Math.pow(scrollPercentage,4) + Math.pow(factor,4))) + factor;
-      const yMove = garbage.id === 'garbage-stack' ? (scrollPercentage * 65) / 100 : (scrollPercentage * 55) / 100;
-      console.log(`${garbage.id} : yMove=${yMove}`)
-      
-      const rotate = Math.pow(2,0.12 * scrollPercentage);
+    const factor = 30
+    const xMove = (-factor*Math.pow(scrollPercentage,4) / (Math.pow(scrollPercentage,4) + Math.pow(factor,4))) + factor;
+    const yMove = garbage.id === 'garbage-stack' ? (scrollPercentage * 65) / 100 : (scrollPercentage * 55) / 100;
+    console.log(`${garbage.id} : yMove=${yMove}`)
+    
+    const rotate = Math.pow(2,0.12 * scrollPercentage);
 
-      if(garbage.id === 'img-scroll1'){
-        this.transformGarbage(garbage, yMove, xMove, -rotate);
-      }
-      else if(garbage.id === 'img-scroll2'){
-        this.transformGarbage(garbage, yMove, -xMove, rotate);
-      }
-      else {
-        this.transformGarbage(garbage, yMove);
-      }
+    if(garbage.id === 'img-scroll1'){
+      this.transformGarbage(garbage, yMove, xMove, -rotate);
+    }
+    else if(garbage.id === 'img-scroll2'){
+      this.transformGarbage(garbage, yMove, -xMove, rotate);
+    }
+    else {
+      this.transformGarbage(garbage, yMove);
     }
   }
 

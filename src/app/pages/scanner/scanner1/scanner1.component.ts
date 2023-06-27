@@ -10,9 +10,7 @@ import { ProductService } from 'src/app/shared/scanner.service';
 })
 export class Scanner1Component {
   @Output() imageCaptured: EventEmitter<string> = new EventEmitter<string>();
-  @ViewChild('videoElement', { static: false }) videoElement: ElementRef;
-  //WIP
-  savedResult: string;
+  savedResult: string = '';
 
 
   constructor(
@@ -22,7 +20,7 @@ export class Scanner1Component {
   ) { }
 
   testing(): void{
-    this.savedResult = "4388844020870"
+    this.savedResult = "4388844020870";
     this.makeApiRequest();
   }
 
@@ -30,15 +28,14 @@ export class Scanner1Component {
     if (this.savedResult !== result) {
       this.savedResult = result;
 
-      const image = this.captureImage();
-      this.imageCaptured.emit(image);
+      //send image
 
       this.makeApiRequest();
     }
   }
 
   makeApiRequest(): void {
-    if(this.isBarcodeValid(this.savedResult) === false){
+    if(this.savedResult !== undefined && this.isBarcodeValid(this.savedResult) === false){
       return;
     }
 
@@ -79,22 +76,5 @@ export class Scanner1Component {
     } else {
       return false;
     }
-  }
-  //WIP
-  captureImage(): string {
-    const video: HTMLVideoElement = this.videoElement.nativeElement;
-  
-    // Create a canvas element
-    const canvas = document.createElement('canvas');
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-  
-    // Draw the current frame from the video onto the canvas
-    const context = canvas.getContext('2d');
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
-  
-    // Get the image data from the canvas as a base64 encoded string
-    return canvas.toDataURL('image/png');
-  
   }
 }

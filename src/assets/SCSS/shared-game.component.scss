@@ -44,9 +44,17 @@ $top-down: 17vh;
     z-index: -1;
 }
 
-img{
+.center-flex{
+    width: 100vw;
+    height: 100vh;
+
     position: absolute;
-    translate: -50% -50%;
-    top: 50%;
-    left: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-div img{
+    width: 30vw;
 }

@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class FooterGameComponent {
   score: number = 0;
+
+  public addScore(){
+    this.score++;
+  }
+
+  public subScore(){
+    if(this.score > 0){
+      this.score--;
+    }
+  }
 }
