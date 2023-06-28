@@ -15,6 +15,9 @@ export class Game2Component implements OnInit{
   garbageSelector: any;
   commonPath = '../../../assets/Garbage/';
 
+  addAnimation : boolean = false;
+  subAnimation: boolean = false;
+
   constructor(private itemService: ItemService) {
   }
 
@@ -34,10 +37,14 @@ export class Game2Component implements OnInit{
     if(this.garbageSelector.garbage === garbageCan){
       this.footer.addScore();
       this.header.addTime();
+      this.addAnimation = true;
+      setTimeout(() => {this.addAnimation = false},350)
     }
     else{
       this.footer.subScore();
       this.header.subTime();
+      this.subAnimation = true;
+      setTimeout(() => {this.subAnimation = false},350)
     }
     this.randomItem();
   }

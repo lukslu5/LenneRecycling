@@ -1,7 +1,10 @@
-import { Component, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
+import { Component, } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/scanner.service';
+import { ImageService } from 'src/app/shared/image.service';
+import html2canvas from 'html2canvas';
+
 
 @Component({
   selector: 'app-scanner1',
@@ -9,14 +12,14 @@ import { ProductService } from 'src/app/shared/scanner.service';
   styleUrls: ['./scanner1.component.scss'],
 })
 export class Scanner1Component {
-  @Output() imageCaptured: EventEmitter<string> = new EventEmitter<string>();
   savedResult: string = '';
 
 
   constructor(
     private http: HttpClient,
     private router: Router,
-    private sharedService: ProductService
+    private productService: ProductService,
+    private imageService: ImageService
   ) { }
 
   testing(): void{
@@ -24,16 +27,19 @@ export class Scanner1Component {
     this.makeApiRequest();
   }
 
-  scanSuccessHandler(result: string) {
+  scanRequest(result: string) {
     if (this.savedResult !== result) {
       this.savedResult = result;
 
-      //send image
-
+      this.captureScreenshot();
       this.makeApiRequest();
     }
   }
 
+  manualRequest(): void{
+    this.imageService.capturedImage = undefined;
+    this.makeApiRequest();
+  }
   makeApiRequest(): void {
     if(this.savedResult !== undefined && this.isBarcodeValid(this.savedResult) === false){
       return;
@@ -44,13 +50,14 @@ export class Scanner1Component {
     this.http.get(url, {responseType: 'text' }).subscribe(
       {
         next: (data: string) => {
-          const products = this.sharedService.parseResponse(data);
+          this.productService.products = this.productService.parseResponse(data);
 
-          // Pass the products array to the shared service
-          this.sharedService.products = products;
-
-          // Navigate to Scanner2Component
-          this.router.navigate(['/scanner/info']);
+          if(this.productService.products[0]){
+            this.router.navigate(['/scanner/info']);
+          }
+          else{
+            this.savedResult = 'NO PRODUCT FOUND';
+          }
         },
         error: (err: any) => {
           console.error(err);
@@ -59,6 +66,14 @@ export class Scanner1Component {
     )
   }
 
+  public captureScreenshot(): void {
+    const element = document.getElementById('scanner');
+  
+    html2canvas(element).then((canvas) => {
+      this.imageService.capturedImage = canvas.toDataURL('image/png');
+    });
+  }
+  
   isBarcodeValid(barcode: string): boolean {
     let sum = 0;
     const check = Number(barcode[barcode.length - 1]);

@@ -10,6 +10,7 @@ export class HeaderGameComponent implements OnInit {
   currentTime = new Date();
   gameStatus: boolean = false; 
 
+
   ngOnInit(): void {
     this.resetTime();
   }
@@ -49,11 +50,13 @@ export class HeaderGameComponent implements OnInit {
     this.gameStatus = false;
   }
   public addTime():void{
-    this.currentTime.setSeconds(this.currentTime.getSeconds() + 5);
+    this.currentTime.setSeconds(this.currentTime.getSeconds() + 2);
+    this.dateToString();
   }
   public subTime():void{
     if(this.currentTime.getSeconds() > 5 || this.currentTime.getMinutes() > 0){
       this.currentTime.setSeconds(this.currentTime.getSeconds() - 5);
+      this.dateToString();
     }
     else{
       this.endGame();

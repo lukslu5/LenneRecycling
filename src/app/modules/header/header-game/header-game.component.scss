@@ -8,9 +8,11 @@ header{
     font-family: 'Nova Square';
     font-size: 28px;
     font-weight: 400;
-    line-height: 34px;
     letter-spacing: 0em;
-    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     background-color: var(--PrimaryColor);
     height: 36px;
@@ -18,4 +20,18 @@ header{
     border-style: solid;
     border-width: 0px 0px 2px 0px;
     border-color: var(--Blackish);
+}
+
+@keyframes timeAnimation {
+    0% {
+    }
+    50%{
+      font-size: 26px;
+    }
+    100% {
+      font-size: 26px;
+    }
+}
+.timeAnimation{
+    animation: timeAnimation 1s infinite;
 }

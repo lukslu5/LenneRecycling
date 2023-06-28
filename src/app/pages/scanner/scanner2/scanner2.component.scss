@@ -32,12 +32,14 @@ ul{
     overflow-y: scroll;
 }
 
-
-#video-screenshot{
-    min-width: calc(100vw - 120px);
-    min-height: calc((100vw - 120px) * 0.75);
+img{
+    width: calc(100vw - 160px);
+    height: calc((100vw - 160px) * 0.75);
     border: var(--Blackish) solid 2px;
-    border-radius: 10px;
+}
 
-    background-color: var(--FontColor);
+span{
+    all: inherit;
+    padding: 0;
+    margin: 0;
 }

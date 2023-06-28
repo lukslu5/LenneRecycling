@@ -21,7 +21,7 @@
     <app-garbage-front theme="themeYellow"></app-garbage-front>
 </div>
 
-<div class="center-flex">
+<div class="center-flex" [ngClass]="{'negative':subAnimation, 'positive':addAnimation}">
     <img *ngIf="garbageSelector" mwlDraggable (dragStart)="onDrag()" [src]="garbageSelector.src"/>
 </div>
 

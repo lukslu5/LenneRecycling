@@ -28,6 +28,10 @@ footer div svg{
     justify-content: center;
 }
 
+footer div svg:focus{
+    outline: none;
+}
+
 footer svg path{
     fill:var(--Blackish);
 }

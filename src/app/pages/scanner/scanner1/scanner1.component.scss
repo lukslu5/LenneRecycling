@@ -12,9 +12,7 @@
 zxing-scanner{
     width: calc(100vw - 120px);
     height: calc((100vw - 120px) * 0.75);
-    border: var(--Blackish) solid 2px;
-    border-radius: 10px;
-
+    
     background-color: var(--FontColor);
 }
 #outputdiv {

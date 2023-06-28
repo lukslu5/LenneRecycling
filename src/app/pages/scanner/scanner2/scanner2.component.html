@@ -2,12 +2,10 @@
 <app-current-page></app-current-page>
 <div class="x-scroll">
     <div class="product" *ngFor="let product of products;index as indexOfProduct">
-      <div *ngIf="capturedImage" id="video-screenshot">
-        <img [src]="capturedImage">
-      </div>
+      <img *ngIf="capturedImage" [src]="capturedImage">
       <div class="info-header width-wide">
         <p>
-          {{ product.name }},{{ product.detailname}}
+          {{ product.name }}<span *ngIf="!product.name">{{ product.detailname }}</span>
         </p>
       </div>
       <div class="info-text width-wide">
@@ -30,9 +28,9 @@
         <h1>
           Achtung
         </h1>
-        <p>
-          V
-        </p>
+        <ul>
+          <li *ngFor="let instruction of productInstructions[indexOfProduct]">{{ instruction }}</li>
+        </ul>
       </div>
     </div>
 </div>
