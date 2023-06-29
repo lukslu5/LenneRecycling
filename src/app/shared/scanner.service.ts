@@ -38,18 +38,31 @@ export class ProductService {
       512: "Pfandsystem / Mehrwegverpackung"
   };
     
-  public getPackaging(value : number){
-      const selectedPackTypes: string[] = [];
+  public getPackaging(value: number): string[] {
+    const selectedPackTypes: string[] = [];
 
-      Object.keys(this.packTypes).forEach((key) => {
-          const packType = parseInt(key);
-          if (value & packType) {
-            selectedPackTypes.push(this.packTypes[key]);
-          }
-        });
-      return selectedPackTypes;
+    this.getPowerOfNumbers(value).forEach((packType) => {
+      if (this.packTypes[packType]) {
+        selectedPackTypes.push(this.packTypes[packType]);
+      }
+    });
+  
+    return selectedPackTypes;
   }
-
+  
+  public getPowerOfNumbers(sum: number): number[] {
+    const result: number[] = [];
+  
+    let number = 1;
+  
+    for(let exp = 0; sum >= number; exp++){
+      number = Math.pow(2,exp);
+      if ((sum & number) === number) {
+        result.push(number);
+      }
+    }
+    return result;
+  }
   products: Product[] = [];
 
   public parseResponse(data: string): Product[] {
@@ -80,7 +93,6 @@ export class ProductService {
           products.push(product as Product);
       }
     }
-
     return products;
   }  
 }

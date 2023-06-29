@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class SettingsComponent {
   commonpath: string = "../../../assets/Icons"
+
+  showImprint: boolean = false;
 }

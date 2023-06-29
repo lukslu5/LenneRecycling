@@ -3,7 +3,7 @@
 <div class="x-scroll">
     <div class="product" *ngFor="let product of products;index as indexOfProduct">
       <img *ngIf="capturedImage" [src]="capturedImage">
-      <div class="info-header width-wide">
+      <div class="info-header width-wide" style="border-radius: 10px;">
         <p>
           {{ product.name }}<span *ngIf="!product.name">{{ product.detailname }}</span>
         </p>
@@ -24,14 +24,22 @@
           <li *ngFor="let pack of productPacks[indexOfProduct]">{{ pack }}</li>
         </ul>
       </div>
-      <div class="info-text width-wide">
+      <div class="info-text width-wide" *ngIf="productInstructions[indexOfProduct]?.length">
         <h1>
-          Achtung
+          Entsorgung
         </h1>
         <ul>
           <li *ngFor="let instruction of productInstructions[indexOfProduct]">{{ instruction }}</li>
         </ul>
       </div>
+    <div class="info-text width-wide" *ngIf="productExtras[indexOfProduct]?.length">
+      <h1>
+        Achtung
+      </h1>
+      <ul>
+        <li *ngFor="let extra of productExtras[indexOfProduct]">{{ extra }}</li>
+      </ul>
     </div>
+  </div>
 </div>
 <app-footer></app-footer>

@@ -46,7 +46,7 @@
                 Feedback
             </div>
         </div>
-        <div class="option">
+        <div class="option" (click)="showImprint = true">
             <div class="icon-text">
                 <div class="icon-bg"><img src="{{ commonpath }}/paragraph.png"></div>
                 Impressum
@@ -54,4 +54,6 @@
         </div>
     </div>
 </div>
+
+<app-imprint *ngIf="showImprint" (click)="showImprint = false"></app-imprint>
 <app-footer></app-footer>

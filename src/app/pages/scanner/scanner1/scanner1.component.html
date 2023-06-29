@@ -1,11 +1,14 @@
 <app-header></app-header>
 <div id="scanner-align">
-    <zxing-scanner
-    id="scanner"
-    [formats]="['EAN_13', 'EAN_8']" 
-    (scanSuccess)="scanRequest($event)" 
-    (click)="testing()" 
-    ></zxing-scanner>
+    <div class="box">
+        <zxing-scanner
+        id="scanner"
+        [formats]="['EAN_13', 'EAN_8']" 
+        (scanSuccess)="scanRequest($event)" 
+        (click)="testing()" 
+        ></zxing-scanner>
+    </div>
+    
     <div id="outputdiv">
         <input id="output" type="text" maxlength="13" [(ngModel)]="savedResult" (blur)="manualRequest()">
     </div>

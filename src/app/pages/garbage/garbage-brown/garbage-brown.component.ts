@@ -8,8 +8,7 @@ import { GarbageService } from 'src/app/shared/garbage.service';
   providers: [GarbageService]
 })
 export class GarbageBrownComponent implements OnInit{
-  constructor(private garbageService: GarbageService) {
-  }
+  constructor(private garbageService: GarbageService) {}
   ngOnInit(): void {
     this.handleScroll();
   }

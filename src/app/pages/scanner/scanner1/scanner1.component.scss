@@ -9,9 +9,27 @@
     left: 50%;
     translate: -50% -50%;
 }
+
+.box{
+    --b: 4px;   /* thickness of the border */
+    --c: var(--GarbagePink);   /* color of the border */
+    --w: 18px;  /* width of border */
+
+    border: var(--b) solid #0000; /* space for the border */
+    --_g: #0000 90deg,var(--c) 0;
+    --_p: var(--w) var(--w) border-box no-repeat;
+    
+    background:
+    conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
+    conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
+    conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+}
 zxing-scanner{
-    width: calc(100vw - 120px);
-    height: calc((100vw - 120px) * 0.75);
+    width: calc(100vw - 100px - 8px);
+    max-width: calc((100vh - 100px - 8px) * 0.45);
+    height: calc((100vw - 100px - 8px) * 0.75);
+    max-height: calc((100vh - 100px - 8px) * 0.75 * 0.45);
     
     background-color: var(--FontColor);
 }
@@ -20,7 +38,9 @@ zxing-scanner{
     justify-content: center;
     align-items: center;
 
-    width: calc(100vw - 120px);
+    width: calc(100vw - 100px);
+    max-width: calc((100vh - 100px) * 0.45);
+
     height: 48px;
     background-color: var(--PrimaryColor);
     border-radius: 15px;
@@ -34,5 +54,7 @@ zxing-scanner{
     background-color: var(--FontColor);
     color: var(--Blackish);
     border-radius: 15px;
-    width: calc(100vw - 120px - 20px);
+
+    width: calc(100vw - 100px - 20px);
+    max-width: calc((100vh - 100px - 35px) * 0.45);
 }

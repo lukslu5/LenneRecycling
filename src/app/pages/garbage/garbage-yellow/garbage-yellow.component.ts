@@ -1,4 +1,4 @@
-import { Component, HostListener, ElementRef } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { GarbageService } from '../../../shared/garbage.service';
 
 @Component({
@@ -7,9 +7,11 @@ import { GarbageService } from '../../../shared/garbage.service';
   styleUrls: ['./garbage-yellow.component.scss'],
   providers: [GarbageService]
 })
-export class GarbageYellowComponent {
-  constructor(private elementRef: ElementRef, private garbageService: GarbageService) {}
-
+export class GarbageYellowComponent implements OnInit{
+  constructor(private garbageService: GarbageService) {}
+  ngOnInit(): void {
+    this.handleScroll();
+  }
   @HostListener('window:scroll')
   handleScroll() {
     this.garbageService.handleScroll();

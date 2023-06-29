@@ -23,9 +23,9 @@ export class GarbageService {
   }
 
   moveGarbage(garbage: HTMLElement, scrollPercentage: number) {
-    const factor = 30
-    const xMove = (-factor*Math.pow(scrollPercentage,4) / (Math.pow(scrollPercentage,4) + Math.pow(factor,4))) + factor;
-    const yMove = garbage.id === 'garbage-stack' ? (scrollPercentage * 65) / 100 : (scrollPercentage * 55) / 100;
+    const factor = 21; //starting position x
+    const xMove = (-factor*Math.pow(scrollPercentage,4) / (Math.pow(scrollPercentage,4) + Math.pow(factor,4.4 /* how fast it goes to the middle */))) + factor;
+    const yMove = garbage.id === 'garbage-stack' ? (scrollPercentage * 65) / 100 : (scrollPercentage * 45) / 100;
     console.log(`${garbage.id} : yMove=${yMove}`)
     
     const rotate = Math.pow(2,0.12 * scrollPercentage);

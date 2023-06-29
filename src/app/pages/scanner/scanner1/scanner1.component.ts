@@ -26,7 +26,6 @@ export class Scanner1Component {
     this.savedResult = "4388844020870";
     this.makeApiRequest();
   }
-
   scanRequest(result: string) {
     if (this.savedResult !== result) {
       this.savedResult = result;

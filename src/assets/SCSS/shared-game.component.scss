@@ -1,7 +1,10 @@
 app-garbage-back,app-garbage-front,app-garbage-extra{
     position: absolute;
     display: inline-block;
+
     width: 40vw;
+    max-width: calc(40vh * 0.45);
+
     translate: -50% -50%;
 }
 
@@ -34,12 +37,11 @@ $top-down: 17vh;
 
 .zone{
     position: absolute;
-    translate: -50% -50%;
 
-    width: 40vw;
-    height: 30vh;
+    width: 45vw;
+    height: 45vh;
     background: rgba(0, 0, 0, 0.05);
-    border-radius: 30%;
+    border-radius: 20%;
 
     z-index: -1;
 }

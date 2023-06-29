@@ -4,7 +4,7 @@
 }
 
 .width-wide{
-    width: calc(100vw - 22px);
+    width: calc(100vw - 26px);
     border-radius: 25px;
 }
 
@@ -39,13 +39,13 @@
     font-family: 'Nova Square', cursive;
     font-weight: 400;
     font-size: 28px;
-    
+
     padding: 10px 10px;
     text-align: center;
     
     color: var(--Blackish);
 
-    max-height: 3em;
+    max-height: 2.5em;
     overflow: auto;
 }
 
