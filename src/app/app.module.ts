@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; // for Swiper.js
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
@@ -71,14 +74,16 @@ const appRoutes: Routes =[
     ImprintComponent,
   ],
   imports: [
+    IonicModule.forRoot(),
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     ZXingScannerModule,
     DragAndDropModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

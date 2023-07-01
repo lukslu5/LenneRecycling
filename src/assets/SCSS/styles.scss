@@ -1,4 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+/* Core CSS required for Ionic components to work properly */
+@import '@ionic/angular/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+// @import '@ionic/angular/css/normalize.css';
+// @import '@ionic/angular/css/structure.css';
+// @import '@ionic/angular/css/typography.css';
+
+/* Optional CSS utils that can be commented out */
+// @import '@ionic/angular/css/padding.css';
+// @import '@ionic/angular/css/float-elements.css';
+// @import '@ionic/angular/css/text-alignment.css';
+// @import '@ionic/angular/css/text-transformation.css';
+// @import '@ionic/angular/css/flex-utils.css';
+// @import '@ionic/angular/css/display.css';
 
 *{
     margin: 0px;
@@ -27,6 +42,10 @@
     --GarbageBrown: #7E5842;
     --GarbagePink: #E2007A;
     --Blackish: #1D1D1B;
+
+    //hmm... https://swiperjs.com/swiper-api#pagination
+    --swiper-pagination-bottom: 8px;
+    --swiper-pagination-top: auto;
 }
 
 html{

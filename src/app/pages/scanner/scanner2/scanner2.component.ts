@@ -3,6 +3,7 @@ import { Product, ProductService } from 'src/app/shared/scanner.service';
 import { Router } from '@angular/router';
 import { ImageService } from 'src/app/shared/image.service';
 
+
 @Component({
   selector: 'app-scanner2',
   templateUrl: './scanner2.component.html',

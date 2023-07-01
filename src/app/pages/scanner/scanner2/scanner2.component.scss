@@ -12,17 +12,12 @@ ul{
     padding: 0px 15px 10px 15px;
 }
 
-.x-scroll {
-    position: relative;
+swiper-container{
     top: 70px;
     max-height: calc(100vh - 120px);
-
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
 }
 
-.product {
+swiper-slide{
     min-width: 100vw;
     height: 85vh;
     display: flex;
@@ -32,6 +27,9 @@ ul{
 
     overflow-y: scroll;
 }
+
+
+
 
 img{
     width: calc(100vw - 160px);

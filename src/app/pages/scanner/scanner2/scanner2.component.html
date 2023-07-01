@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-current-page></app-current-page>
-<div class="x-scroll">
-    <div class="product" *ngFor="let product of products;index as indexOfProduct">
+<swiper-container [pagination]="true" [loop]="true">
+    <swiper-slide *ngFor="let product of products;index as indexOfProduct">
       <img *ngIf="capturedImage" [src]="capturedImage">
       <div class="info-header width-wide" style="border-radius: 10px;">
         <p>
@@ -40,6 +40,6 @@
         <li *ngFor="let extra of productExtras[indexOfProduct]">{{ extra }}</li>
       </ul>
     </div>
-  </div>
-</div>
+  </swiper-slide>
+</swiper-container>
 <app-footer></app-footer>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LenneRecycling</string>
+    <string name="title_activity_main">LenneRecycling</string>
+    <string name="package_name">com.lennetech.lennerecycling</string>
+    <string name="custom_url_scheme">com.lennetech.lennerecycling</string>
+</resources>
