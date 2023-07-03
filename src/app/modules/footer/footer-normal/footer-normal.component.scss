@@ -1,6 +1,6 @@
 footer{
     position: fixed;
-    z-index: 1;
+    z-index: 5;
     bottom: 0px;
 
     background-color: var(--PrimaryColor);
@@ -40,11 +40,4 @@ footer div svg.IconActive path{
     fill: var(--GarbageYellow);
     stroke: var(--Blackish);
     stroke-width: 1px;
-}
-
-app-current-page{
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    translate: -50% 0;
 }

@@ -1,6 +1,5 @@
 <app-header></app-header>
-<app-current-page></app-current-page>
-<swiper-container [pagination]="true" [loop]="true">
+<swiper-container [pagination]="true">
     <swiper-slide *ngFor="let product of products;index as indexOfProduct">
       <img *ngIf="capturedImage" [src]="capturedImage">
       <div class="info-header width-wide" style="border-radius: 10px;">

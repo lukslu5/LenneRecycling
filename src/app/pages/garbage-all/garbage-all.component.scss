@@ -1,7 +1,8 @@
+@import 'src/assets/scss/shared-general.component.scss';
+
 #double-vh{
     height: 200vh;
 }
-
 .align-text{
     display: flex;
     flex-direction: column;
@@ -11,20 +12,20 @@
     position: absolute;
 
     height: 45vh;
-    top: calc(200vh - 48vh);
+    top: calc(200vh - 55vh);
     left: 50%;
     translate: -50% 0;
     overflow-y: scroll;
     border-radius: 10px;
 }
 
-#garbage-stack{
+.garbage-stack{
     position: absolute;
     top: 80px;
     left: 50%;
     translate: -50% 0;
-    width: 90%;
-    height: 75%;
+    width: 90vw;
+    height: 75vh;
 }
 
 app-garbage-back,app-garbage-front,app-garbage-extra{
@@ -39,19 +40,19 @@ app-garbage-back,app-garbage-front,app-garbage-extra{
     translate: -50% -50%;
 }
 
-#garbage-stack img{
+.garbage-stack img{
     width: 22vw;
     max-width: calc(22vh * 0.45);
 }
 
-#garbage-stack #img-scroll1{
+.garbage-stack .img-scroll1{
     position: absolute;
     translate: -50% -50%;
     left: 50%;
     top: 15vh;
 }
 
-#garbage-stack #img-scroll2{
+.garbage-stack .img-scroll2{
     position: absolute;
     translate: -50% -50%;
     left: 50%;

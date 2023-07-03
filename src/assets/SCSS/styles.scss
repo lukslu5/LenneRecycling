@@ -44,8 +44,18 @@
     --Blackish: #1D1D1B;
 
     //hmm... https://swiperjs.com/swiper-api#pagination
-    --swiper-pagination-bottom: 8px;
-    --swiper-pagination-top: auto;
+    //--swiper-pagination-color: var(--swiper-theme-color);
+    //--swiper-pagination-bullet-size: 8px;
+    //--swiper-pagination-bullet-width: 8px;
+    //--swiper-pagination-bullet-height: 8px;
+    --swiper-pagination-bullet-inactive-color: var(--Blackish);
+    --swiper-pagination-bullet-inactive-opacity: 0.8;
+    //--swiper-pagination-bullet-opacity: 1;
+    //--swiper-pagination-bullet-horizontal-gap: 4px;
+    //--swiper-pagination-bullet-vertical-gap: 6px;
+
+    --swiper-pagination-bottom: auto;
+    --swiper-pagination-top: 0px;
 }
 
 html{
@@ -53,3 +63,18 @@ html{
     height: 100vh;
 }
 
+swiper-container{
+    top: 40px;
+    height: calc(100% - 40px);
+    position: relative;
+    width: 100vw;
+}
+
+swiper-container .swiper-pagination{
+    position: fixed !important;
+}
+
+swiper-slide{
+    position: relative;
+    top: 35px;
+}

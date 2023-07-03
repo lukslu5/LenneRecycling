@@ -6,7 +6,7 @@ const config: CapacitorConfig = {
   webDir: 'dist/lenne-recycling',
   server: {
     androidScheme: 'https',
-    url: 'http://192.168.0.127:4200',
+    url: 'http://192.168.179.7:4200',
     cleartext: true
   }
 };

@@ -15,13 +15,8 @@ import { HeaderComponent } from './modules/header/header-normal/header-normal.co
 import { Splash1Component } from './pages/splash/splash1/splash1.component';
 import { Splash2Component } from './pages/splash/splash2/splash2.component';
 import { Scanner1Component } from './pages/scanner/scanner1/scanner1.component';
-import { GarbageBrownComponent } from './pages/garbage/garbage-brown/garbage-brown.component';
-import { GarbageGreenComponent } from './pages/garbage/garbage-green/garbage-green.component';
-import { GarbageYellowComponent } from './pages/garbage/garbage-yellow/garbage-yellow.component';
-import { GarbageGrayComponent } from './pages/garbage/garbage-gray/garbage-gray.component';
-import { CurrentPageComponent } from './modules/current-page/current-page.component';
-import { SettingsComponent } from './pages/other/settings/settings.component';
-import { InfoComponent } from './pages/other/info/info.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { InfoComponent } from './pages/info/info.component';
 import { Game1Component } from './pages/game/game1/game1.component';
 import { Scanner2Component } from './pages/scanner/scanner2/scanner2.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,14 +27,12 @@ import { FooterGameComponent } from './modules/footer/footer-game/footer-game.co
 import { Game2Component } from './pages/game/game2/game2.component';
 import { GarbageExtraComponent } from './modules/garbage-can/garbage-extra/garbage-extra.component';
 import { ImprintComponent } from './modules/other/imprint/imprint.component';
+import { GarbageAllComponent } from './pages/garbage-all/garbage-all.component';
 
 const appRoutes: Routes =[
   { path: "", component: Splash1Component},
-  { path: "declaimer", component: Splash2Component},
-  { path: "menu/brown", component: GarbageBrownComponent},
-  { path: "menu/green", component: GarbageGreenComponent},
-  { path: "menu/gray", component: GarbageGrayComponent},
-  { path: "menu/yellow", component: GarbageYellowComponent},
+  { path: "disclaimer", component: Splash2Component},
+  { path: "menu", component: GarbageAllComponent},
   { path: "scanner/scan", component: Scanner1Component},
   { path: "scanner/info", component: Scanner2Component},
   { path: "settings", component: SettingsComponent},
@@ -56,11 +49,6 @@ const appRoutes: Routes =[
     Splash1Component,
     Splash2Component,
     Scanner1Component,
-    GarbageBrownComponent,
-    GarbageGreenComponent,
-    GarbageYellowComponent,
-    GarbageGrayComponent,
-    CurrentPageComponent,
     SettingsComponent,
     InfoComponent,
     Game1Component,
@@ -72,6 +60,7 @@ const appRoutes: Routes =[
     Game2Component,
     GarbageExtraComponent,
     ImprintComponent,
+    GarbageAllComponent,
   ],
   imports: [
     IonicModule.forRoot(),
