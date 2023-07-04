@@ -59,6 +59,9 @@ ion-toggle{
     top: 50%;
     right: 15px;
     translate: -50% -50%;
+
+    --handle-background: var(--SecondaryColor);
+    --handle-background-checked: var(--PrimaryColor);
 }
 
 .icon-bg{

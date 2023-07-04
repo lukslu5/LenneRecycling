@@ -28,6 +28,64 @@
 }
 
 :root{
+    /*
+    --ion-color-primary: #69D635;
+	--ion-color-primary-rgb: 105,214,53;
+	--ion-color-primary-contrast: #000000;
+	--ion-color-primary-contrast-rgb: 0,0,0;
+	--ion-color-primary-shade: #5cbc2f;
+	--ion-color-primary-tint: #78da49;
+
+	--ion-color-secondary: #52405C;
+	--ion-color-secondary-rgb: 82,64,92;
+	--ion-color-secondary-contrast: #ffffff;
+	--ion-color-secondary-contrast-rgb: 255,255,255;
+	--ion-color-secondary-shade: #483851;
+	--ion-color-secondary-tint: #63536c;
+
+	--ion-color-tertiary: #8facd9;
+	--ion-color-tertiary-rgb: 143,172,217;
+	--ion-color-tertiary-contrast: #000000;
+	--ion-color-tertiary-contrast-rgb: 0,0,0;
+	--ion-color-tertiary-shade: #7e97bf;
+	--ion-color-tertiary-tint: #9ab4dd;
+
+	--ion-color-success: #219348;
+	--ion-color-success-rgb: 33,147,72;
+	--ion-color-success-contrast: #ffffff;
+	--ion-color-success-contrast-rgb: 255,255,255;
+	--ion-color-success-shade: #1d813f;
+	--ion-color-success-tint: #379e5a;
+
+	--ion-color-warning: #FFC107;
+	--ion-color-warning-rgb: 255,193,7;
+	--ion-color-warning-contrast: #000000;
+	--ion-color-warning-contrast-rgb: 0,0,0;
+	--ion-color-warning-shade: #e0aa06;
+	--ion-color-warning-tint: #ffc720;
+
+	--ion-color-danger: #E2007A;
+	--ion-color-danger-rgb: 226,0,122;
+	--ion-color-danger-contrast: #ffffff;
+	--ion-color-danger-contrast-rgb: 255,255,255;
+	--ion-color-danger-shade: #c7006b;
+	--ion-color-danger-tint: #e51a87;
+
+	--ion-color-medium: #52405C;
+	--ion-color-medium-rgb: 82,64,92;
+	--ion-color-medium-contrast: #ffffff;
+	--ion-color-medium-contrast-rgb: 255,255,255;
+	--ion-color-medium-shade: #483851;
+	--ion-color-medium-tint: #63536c;
+
+	--ion-color-light: #F0F0F0;
+	--ion-color-light-rgb: 240,240,240;
+	--ion-color-light-contrast: #000000;
+	--ion-color-light-contrast-rgb: 0,0,0;
+	--ion-color-light-shade: #d3d3d3;
+	--ion-color-light-tint: #f2f2f2;
+    */
+    
     --Experimental: #8facd9;
 
     --PrimaryColorGradient1:#71FF2F;
@@ -55,7 +113,7 @@
     //--swiper-pagination-bullet-vertical-gap: 6px;
 
     --swiper-pagination-bottom: auto;
-    --swiper-pagination-top: 0px;
+    --swiper-pagination-top: 45px;
 }
 
 html{
@@ -64,17 +122,11 @@ html{
 }
 
 swiper-container{
-    top: 40px;
-    height: calc(100% - 40px);
-    position: relative;
-    width: 100vw;
-}
-
-swiper-container .swiper-pagination{
-    position: fixed !important;
+    height: 100%;
+    width: 100%;
 }
 
 swiper-slide{
-    position: relative;
-    top: 35px;
+    top: 80px;
+    height: calc(100% - 80px);
 }

@@ -6,13 +6,19 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./garbage-all.component.scss']
 })
 export class GarbageAllComponent implements OnInit{
+  downScroll: boolean = false;
+
   ngOnInit(): void {
     this.handleScroll();
+    
   }
   @HostListener('window:scroll')
   handleScroll(){
+    
+
     const scrollPosition = window.scrollY;
-    const scrollPercentage = (scrollPosition / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight
+    const scrollPercentage = (scrollPosition / maxScroll) * 100;
 
 
     //i will never fix this redundancy :D
@@ -33,12 +39,28 @@ export class GarbageAllComponent implements OnInit{
     const gsi4_1 = document.querySelector('#gsi4_1') as HTMLElement;
     const gsi4_2 = document.querySelector('#gsi4_2') as HTMLElement;
 
-    if(scrollPercentage >= 80){
+
+    if(scrollPercentage >= 50){
       footer.style.display = 'none';
+      if(!this.downScroll){
+        window.scrollTo({
+          top: maxScroll,
+          behavior: 'smooth',
+        })
+        this.downScroll = true;
+      }
     }
     else{
       footer.style.display = 'block';
+      if(this.downScroll === true){
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        })
+        this.downScroll = false;
+      }
     }
+    
 
     this.moveGarbage(gs1, scrollPercentage);
     this.moveGarbage(gsi1_1, scrollPercentage * 0.98);
