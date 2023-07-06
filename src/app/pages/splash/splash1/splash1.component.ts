@@ -11,6 +11,6 @@ export class Splash1Component {
   path: string = "../../../assets/Icons/Recycle_Logo.png"
 
   ngOnInit() {
-    setTimeout(() => {this.router.navigate(['/declaimer']);}, 1000);
+    setTimeout(() => {this.router.navigate(['/disclaimer']);}, 1000);
   }
 }

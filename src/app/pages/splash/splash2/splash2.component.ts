@@ -11,6 +11,6 @@ export class Splash2Component {
   path: string = "../../../assets/Icons/Warning_Logo.png"
 
   ngOnInit() {
-    setTimeout(() => {this.router.navigate(['/menu/brown']);}, 2500);
+    setTimeout(() => {this.router.navigate(['/menu']);}, 2500);
   }
 }
