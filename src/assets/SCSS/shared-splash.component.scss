@@ -1,7 +1,7 @@
 
 #logo{
     width: calc(100vw - 165px);
-    height: calc(100vw - 165px);
+    max-width: calc((100vh - 165px) * 0.45);
 }
 #logo-font{
     font-family: 'Nova Square';
